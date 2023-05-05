@@ -8,17 +8,17 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 
-const feedbackReducer = (state = [], action) => {
-    if (action.type = 'SET_FEEDBACK_REDUCER') {
-        feedbackArray = action.payload;
-        return feedbackArray;
+const feedbackResults = (state = [], action) => {
+    if (action.type === 'SET_FEEDBACK_RESULTS') {
+        const feedbacResultsArray = action.payload;
+        return feedbacResultsArray;
     }
-    return state
+    return state;
 }
 
 const theStore = createStore(
     combineReducers({
-        feedbackReducer
+        feedbackResults
     }),
     applyMiddleware(
         logger

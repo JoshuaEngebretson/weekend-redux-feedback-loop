@@ -33,6 +33,8 @@ function App() {
         type: 'SET_FEEDBACK_RESULTS',
         payload: feedbackResultsArray
       })
+    }).catch((err) => {
+      console.log('Error:', err);
     })
   }
 

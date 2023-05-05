@@ -3,8 +3,6 @@ const router = express.Router();
 const pool = require('../modules/pool')
 
 router.get('/', (req, res) => {
-    console.log('Inside get /feedback');
-    
     pool.query('SELECT * from "feedback";')
     .then((result) => {
         res.send(result.rows);

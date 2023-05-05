@@ -20,13 +20,17 @@ function CommentsPage() {
     <>
       <h1>Any comments you want to leave?</h1>
       <textarea 
+        rows='4'
+        cols='60'
         placeholder='Optional'
         value={feedbackComments}
         onChange={event => setFeedbackComments(event.target.value)}
       >
         {/* This is where the user will type their comments. */}
       </textarea>
-      <button onClick={dispatchSendToReview}>Next</button>
+      <div>
+        <button onClick={dispatchSendToReview}>Next</button>
+      </div>
     </>
   )
 }

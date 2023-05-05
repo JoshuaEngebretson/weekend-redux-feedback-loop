@@ -12,7 +12,7 @@ function SupportPage() {
   const checkRequiredSendToComments = () => {
     if (supportedInput !== '') {
       dispatch({
-        type: 'SET_UNDERSTANDING_RATING',
+        type: 'SET_SUPPORTED_RATING',
         payload: supportedInput
       })
       history.push('/comments')

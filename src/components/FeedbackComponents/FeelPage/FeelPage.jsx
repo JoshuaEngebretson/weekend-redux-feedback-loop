@@ -10,9 +10,7 @@ function FeelPage() {
   const [feelingsInput, setFeelingsInput] = useState('')
 
   const checkRequiredSendToUnderstand = () => {
-    if (feelingsInput != '') {
-      console.log('Next Button clicked');
-      console.log(feelingsInput);
+    if (feelingsInput !== '') {
       dispatch({
         type: 'SET_FEELINGS_RATING',
         payload: feelingsInput

@@ -16,9 +16,7 @@ const feedbackResults = (state = [], action) => {
     return state;
 }
 
-const feedback = {};
-
-const currentFeedback = (state = feedback, action) => {
+const currentFeedback = (state = {}, action) => {
     if (action.type === 'SET_FEELINGS_RATING') {
         const feelingsInput = action.payload;
         return {...state, feelings: feelingsInput};

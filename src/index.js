@@ -16,9 +16,32 @@ const feedbackResults = (state = [], action) => {
     return state;
 }
 
+const feedback = {};
+
+const currentFeedback = (state = feedback, action) => {
+    if (action.type === 'SET_FEELINGS_RATING') {
+        const feelingsInput = action.payload;
+        return {...state, feelings: feelingsInput};
+    }
+    else if (action.type === 'SET_UNDERSTANDING_RATING') {
+        const understandingInput = action.payload;
+        return {...state, understanding: understandingInput};
+    }
+    else if (action.type === 'SET_SUPPORTED_RATING') {
+        const supportedInput = action.payload;
+        return {...state, supported: supportedInput};
+    }
+    else if (action.type === 'SET_FEEDBACK_COMMENTS') {
+        const feedbackComments = action.payload;
+        return {...state, comments: feedbackComments}
+    }
+    return state;
+}
+
 const theStore = createStore(
     combineReducers({
-        feedbackResults
+        feedbackResults,
+        currentFeedback
     }),
     applyMiddleware(
         logger

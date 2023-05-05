@@ -43,13 +43,29 @@ function App() {
         <h1 className='App-title'>Feedback!</h1>
         <h4>Don't forget it!</h4>
       </header>
-      <FeelPage />
-      <UnderstandPage />
-      <SupportPage />
-      <CommentsPage />
-      <ReviewFeedbackPage />
-      <SubmissionSuccessPage />
-      <AdminView getFeedback={getFeedback}/>
+      <Router>
+        <Route exact path='/'>
+          <FeelPage />
+        </Route>
+        <Route exact path='/understanding'>
+          <UnderstandPage />
+        </Route>
+        <Route exact path='/support'>
+        <SupportPage />
+        </Route>
+        <Route exact path='/comments'>
+          <CommentsPage />
+        </Route>
+        <Route exact path='/review/feedback'>
+          <ReviewFeedbackPage />
+        </Route>
+        <Route exact path='/success'>
+          <SubmissionSuccessPage />
+        </Route>
+        <Route exact path='/admin'>
+          <AdminView getFeedback={getFeedback}/>
+        </Route>
+      </Router>
     </div>
   );
 }

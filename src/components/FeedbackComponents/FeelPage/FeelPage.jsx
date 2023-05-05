@@ -1,10 +1,11 @@
 import Swal from "sweetalert2";
 import { useDispatch } from "react-redux";
-import { useHistory as history } from "react-router-dom/";
+import { useHistory } from "react-router-dom/";
 import { useState } from "react";
 
 function FeelPage() {
 
+  const history = useHistory();
   const dispatch = useDispatch();
   const [feelingsInput, setFeelingsInput] = useState('')
 
@@ -16,6 +17,7 @@ function FeelPage() {
         type: 'SET_FEELINGS_RATING',
         payload: feelingsInput
       })
+      history.push('/understanding')
     }
     else {
       Swal.fire({

@@ -26,3 +26,18 @@ h4 {
   margin-left: 20%;
   padding: 6px 15px 6px 15px;
 }
+
+.required {
+  border: 0;
+  border-bottom: 1px solid #f9002ed2;
+  outline: none;
+}
+.required::placeholder {
+  color: red
+}
+
+.bottom-border {
+  border: 0;
+  border-bottom: 1px solid #000;
+  outline: none;
+}

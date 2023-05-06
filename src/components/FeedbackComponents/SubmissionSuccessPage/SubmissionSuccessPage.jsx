@@ -6,7 +6,7 @@ function SubmissionSuccessPage({getFeedback}) {
   const history = useHistory();
   const dispatch = useDispatch();
 
-  const sendToStart = () => {
+  const resetSendToStart = () => {
     history.push('/')
     dispatch({
       type: 'RESET_CURRENT_FEEDBACK'
@@ -17,7 +17,7 @@ function SubmissionSuccessPage({getFeedback}) {
     <>
       <h1>Submission Success!</h1>
       <h2>Thank you for your feedback!</h2>
-      <button onClick={sendToStart}>Leave New Feedback</button>
+      <button onClick={resetSendToStart}>Leave New Feedback</button>
     </>
   )
 }

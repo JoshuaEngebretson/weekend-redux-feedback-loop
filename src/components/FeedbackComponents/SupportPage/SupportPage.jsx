@@ -2,6 +2,7 @@ import Swal from "sweetalert2";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom/";
 import { useState } from "react";
+import { TextField } from "@mui/material";
 
 function SupportPage() {
 
@@ -30,12 +31,34 @@ function SupportPage() {
     }
   }
 
-    const required = () => {
+  const requiredSupportInput = () => {
     if (requiredInput) {
-      return 'required'
+      // return 'required'
+      return (
+        <TextField
+          type='number'
+          label='Support?'
+          error
+          value={supportedInput}
+          onChange={event => setSupportedInput(event.target.value)}
+          variant='standard'
+          helperText='Scale of 1-5 (Required)'
+          sx = {{width: 225, left:120, mt:-1}}
+        />
+      )
     }
     else {
-      return 'bottom-border'
+      return (
+        <TextField
+          type='number'
+          label='Support?'
+          value={supportedInput}
+          onChange={event => setSupportedInput(event.target.value)}
+          variant='standard'
+          helperText='Scale of 1-5'
+          sx = {{width: 225, left:120, mt:-1}}
+        />
+      )
     }
   }
 
@@ -43,14 +66,7 @@ function SupportPage() {
   return (
     <>
       <h1>How well are you being supported?</h1>
-      <p>On a scale from 1-5</p>
-      <input 
-        className={required()}
-        type='number'
-        placeholder='Required'
-        value={supportedInput}
-        onChange={event => setSupportedInput(event.target.value)}
-      />
+      {requiredSupportInput()}
       <button className='next-btn' onClick={checkRequiredSendToComments}>Next</button>
     </>
   )

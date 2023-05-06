@@ -2,6 +2,7 @@ import Swal from "sweetalert2";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom/";
 import { useState } from "react";
+import { TextField, Input } from "@mui/material";
 
 function FeelPage() {
 
@@ -32,24 +33,38 @@ function FeelPage() {
 
   const required = () => {
     if (requiredInput) {
-      return 'required'
+      // return 'required'
+      return (
+        <TextField
+          label='Feelings'
+          error
+          value={feelingsInput}
+          onChange={event => setFeelingsInput(event.target.value)}
+          variant='standard'
+          helperText='Required Number 1-5'
+        />
+      )
     }
     else {
-      return 'bottom-border'
+      return (
+        <TextField
+          label='Feelings'
+          value={feelingsInput}
+          onChange={event => setFeelingsInput(event.target.value)}
+          variant='standard'
+          helperText='Number 1-5'
+        />
+      )
+      // return 'bottom-border'
     }
   }
+
 
   return (
     <>
       <h1>How are you feeling today?</h1>
       <p>On a scale from 1-5</p>
-      <input 
-        className={required()}
-        type='number'
-        placeholder='Required'
-        value={feelingsInput}
-        onChange={event => setFeelingsInput(event.target.value)}
-      />
+      {required()}
       <button className='next-btn' onClick={checkRequiredSendToUnderstand}>Next</button>
     </>
   )

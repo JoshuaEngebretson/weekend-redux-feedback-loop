@@ -17,23 +17,25 @@ const feedbackResults = (state = [], action) => {
 }
 
 const currentFeedback = (state = {}, action) => {
-    if (action.type === 'SET_FEELINGS_RATING') {
-        const feelingsInput = action.payload;
-        return {...state, feelings: feelingsInput};
+    switch (action.type) {
+        case 'SET_FEELINGS_RATING':
+            const feelingsInput = action.payload;
+            return {...state, feelings: feelingsInput};
+
+        case 'SET_UNDERSTANDING_RATING':
+            const understandingInput = action.payload;
+            return {...state, understanding: understandingInput};
+
+        case 'SET_SUPPORTED_RATING':
+            const supportedInput = action.payload;
+            return {...state, supported: supportedInput};
+
+        case 'SET_FEEDBACK_COMMENTS':
+            const feedbackComments = action.payload;
+            return {...state, comments: feedbackComments};
+
+        default: return state;
     }
-    else if (action.type === 'SET_UNDERSTANDING_RATING') {
-        const understandingInput = action.payload;
-        return {...state, understanding: understandingInput};
-    }
-    else if (action.type === 'SET_SUPPORTED_RATING') {
-        const supportedInput = action.payload;
-        return {...state, supported: supportedInput};
-    }
-    else if (action.type === 'SET_FEEDBACK_COMMENTS') {
-        const feedbackComments = action.payload;
-        return {...state, comments: feedbackComments}
-    }
-    return state;
 }
 
 const theStore = createStore(

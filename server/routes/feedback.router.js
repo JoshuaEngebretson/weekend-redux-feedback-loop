@@ -33,7 +33,7 @@ router.post('/', (req, res) => {
     pool.query(sqlText, sqlValues)
         .then((dbRes) => {
             // Send "Created" status
-            req.sendStatus(201);
+            res.sendStatus(201);
         })
         .catch((dbErr) => {
             // On Error, log the error

@@ -1,38 +1,15 @@
-import Swal from "sweetalert2";
-import { useDispatch } from "react-redux";
-import { useHistory } from "react-router-dom/";
 import { useState } from "react";
 import RequiredTextField from "../RequiredTextField/RequiredTextField";
+import NextButton from "../NextButton/NextButton";
 
 function UnderstandPage() {
 
-  const history = useHistory();
-  const dispatch = useDispatch();
   const [understandingInput, setUnderstandingInput] = useState('');
   const [requiredInput, setRequiredInput] = useState(false);
 
-  const checkRequiredSendToSupport = (event) => {
-    event.preventDefault();
-    if (understandingInput !== '' && understandingInput >= 1 && understandingInput <= 5) {
-      dispatch({
-        type: 'SET_UNDERSTANDING_RATING',
-        payload: understandingInput
-      })
-      history.push('/support');
-      setRequiredInput(false);
-    }
-    else {
-      Swal.fire({
-        icon: 'warning',
-        html: `
-          <p>Please complete the required field.</p>
-          <p>With a number between 1 and 5</p>`
-      })
-      setRequiredInput(true);
-    }
-  }
-
   const label = "Understanding?"
+  const type ='SET_UNDERSTANDING_RATING'
+  const nextDestination = '/support'
 
   return (
     <>
@@ -44,12 +21,12 @@ function UnderstandPage() {
           label={label}
           requiredInput={requiredInput}
         />
-        <button
-          className='next-btn'
-          onClick={checkRequiredSendToSupport}
-        >
-          Next
-        </button>
+        <NextButton
+          feedbackInput={understandingInput}
+          setRequiredInput={setRequiredInput}
+          type={type}
+          nextDestination={nextDestination}
+        />
       </form>
     </>
   )

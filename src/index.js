@@ -34,6 +34,15 @@ const currentFeedback = (state = {}, action) => {
             const feedbackComments = action.payload;
             return {...state, comments: feedbackComments};
 
+        case 'RESET_CURRENT_FEEDBACK':
+            const emptyFeedback = {
+                feelings: '',
+                understanding: '',
+                supported: '',
+                comments: '',
+            }
+            return emptyFeedback;
+
         default: return state;
     }
 }

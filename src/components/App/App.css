@@ -21,3 +21,17 @@
 h4 {
   font-style: italic;
 }
+
+.next-btn {
+  margin-left: 20%;
+  padding: 7px 20px 7px 20px;
+  font-size: larger;
+  border-radius: 20%;
+  border: none;
+  background-color: rgb(216,216,216);
+}
+.next-btn:hover {
+  background-color: #033076;
+  color: rgb(239, 239, 239);
+}
+

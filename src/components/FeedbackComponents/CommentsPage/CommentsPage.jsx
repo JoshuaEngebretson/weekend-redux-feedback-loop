@@ -1,6 +1,8 @@
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom/";
 import { useState } from "react";
+import { TextField } from "@mui/material";
+
 
 function CommentsPage() {
 
@@ -20,28 +22,17 @@ function CommentsPage() {
     <>
       <h1>Any comments you want to leave?</h1>
       <div className="above-input">
-        <label>Comments</label>
       </div>
-    {/* <p>
-      <span 
-        className='textarea'
-        role='textbox'
-        contentEditable
-        placeholder="Enter Optional Comments Here..."
-        value={feedbackComments}
-        onInput={event => setFeedbackComments(event.target.textContent)}> */}
-        {/* onInput={event => setFeedbackComments(event.target.innerHTML)}> */}
-      {/* </span>
-    </p> */}
-      <textarea 
-        rows='4'
-        cols='30'
-        placeholder='Optional'
+      <TextField
+        label='Enter Comments Here'
+        helperText='(Optional)'
         value={feedbackComments}
         onChange={event => setFeedbackComments(event.target.value)}
-      >
-        This is where the user will type their comments.
-      </textarea>
+        variant='standard'
+        sx = {{width: 225, left:120, mt:-1}}
+        multiline
+        maxRows={Infinity}
+      />
         <button className='next-btn' onClick={dispatchSendToReview}>Next</button>
     </>
   )

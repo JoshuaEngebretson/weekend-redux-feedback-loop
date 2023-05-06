@@ -36,7 +36,7 @@ function UnderstandPage() {
         value={understandingInput}
         onChange={event => setUnderstandingInput(event.target.value)}
       />
-      <button onClick={checkRequiredSendToSupport}>Next</button>
+      <button className='next-btn' onClick={checkRequiredSendToSupport}>Next</button>
     </>
   )
 }

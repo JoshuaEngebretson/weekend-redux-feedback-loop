@@ -21,3 +21,8 @@
 h4 {
   font-style: italic;
 }
+
+.next-btn {
+  margin-left: 20%;
+  padding: 6px 15px 6px 15px;
+}

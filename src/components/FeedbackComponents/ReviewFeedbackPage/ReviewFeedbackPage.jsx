@@ -21,6 +21,7 @@ function ReviewFeedbackPage() {
     })
     .then((response) => {
       history.push('/success')
+      getFeedback();
     })
     .catch((err) => {
       Swal.fire({

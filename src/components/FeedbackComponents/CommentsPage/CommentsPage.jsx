@@ -29,7 +29,7 @@ function CommentsPage() {
         {/* This is where the user will type their comments. */}
       </textarea>
       <div>
-        <button onClick={dispatchSendToReview}>Next</button>
+        <button className='next-btn' onClick={dispatchSendToReview}>Next</button>
       </div>
     </>
   )

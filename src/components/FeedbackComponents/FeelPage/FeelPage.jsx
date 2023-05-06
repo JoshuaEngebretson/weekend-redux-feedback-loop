@@ -35,7 +35,7 @@ function FeelPage() {
         value={feelingsInput}
         onChange={event => setFeelingsInput(event.target.value)}
       />
-      <button onClick={checkRequiredSendToUnderstand}>Next</button>
+      <button className='next-btn' onClick={checkRequiredSendToUnderstand}>Next</button>
     </>
   )
 }

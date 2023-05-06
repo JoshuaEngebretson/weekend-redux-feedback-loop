@@ -59,7 +59,9 @@ function App() {
           <CommentsPage />
         </Route>
         <Route exact path='/review/feedback'>
-          <ReviewFeedbackPage />
+          <ReviewFeedbackPage
+            getFeedback={getFeedback}
+          />
         </Route>
         <Route exact path='/success'>
           <SubmissionSuccessPage />

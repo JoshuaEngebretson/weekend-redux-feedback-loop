@@ -36,7 +36,7 @@ function SupportPage() {
         value={supportedInput}
         onChange={event => setSupportedInput(event.target.value)}
       />
-      <button onClick={checkRequiredSendToComments}>Next</button>
+      <button className='next-btn' onClick={checkRequiredSendToComments}>Next</button>
     </>
   )
 }

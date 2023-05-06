@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom/";
 import axios from "axios";
 import Swal from "sweetalert2";
 
-function ReviewFeedbackPage() {
+function ReviewFeedbackPage({getFeedback}) {
 
   const history = useHistory();
   const currentFeedback = useSelector(state => state.currentFeedback);

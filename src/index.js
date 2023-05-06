@@ -41,7 +41,7 @@ const currentFeedback = (state = {}, action) => {
                 supported: '',
                 comments: '',
             }
-            return emptyFeedback
+            return emptyFeedback;
 
         default: return state;
     }

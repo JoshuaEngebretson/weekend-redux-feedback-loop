@@ -2,7 +2,7 @@ import Swal from "sweetalert2";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom/";
 import { useState } from "react";
-import { TextField } from "@mui/material";
+import RequiredTextField from "../RequiredTextField/RequiredTextField";
 
 function UnderstandPage() {
 
@@ -32,46 +32,18 @@ function UnderstandPage() {
     }
   }
 
-  const requiredUnderstandingInput = () => {
-    if (requiredInput) {
-      // Adjust styling to show bottom border
-      //  change label to show as red
-      //  Add (Required) to the subtext below the input
-      return (
-        <TextField
-          type='number'
-          label='Understanding?'
-          error
-          value={understandingInput}
-          onChange={event => setUnderstandingInput(event.target.value)}
-          variant='standard'
-          helperText='Scale of 1-5 (Required)'
-          sx = {{width: 225, left:120, mt:-1}}
-        />
-      )
-    }
-    else {
-      // Style as normal, blue bottom border when selected
-      return (
-        <TextField
-          type='number'
-          label='Understanding?'
-          value={understandingInput}
-          onChange={event => setUnderstandingInput(event.target.value)}
-          variant='standard'
-          helperText='Scale of 1-5'
-          sx = {{width: 225, left:120, mt:-1}}
-        />
-      )
-    }
-  }
-
+  const label = "Understanding?"
 
   return (
     <>
       <h1>How well are you understanding the content?</h1>
       <form>
-        {requiredUnderstandingInput()}
+        <RequiredTextField
+          feedbackInput={understandingInput}
+          setFeedbackInput={setUnderstandingInput}
+          label={label}
+          requiredInput={requiredInput}
+        />
         <button
           className='next-btn'
           onClick={checkRequiredSendToSupport}

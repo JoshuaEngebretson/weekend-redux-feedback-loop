@@ -2,7 +2,7 @@ import Swal from "sweetalert2";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom/";
 import { useState } from "react";
-import { TextField, Input } from "@mui/material";
+import { TextField } from "@mui/material";
 
 function FeelPage() {
 
@@ -37,7 +37,7 @@ function FeelPage() {
       return (
         <TextField
           type='number'
-          label='Feelings'
+          label='Feelings?'
           error
           value={feelingsInput}
           onChange={event => setFeelingsInput(event.target.value)}
@@ -51,7 +51,7 @@ function FeelPage() {
       return (
         <TextField
           type='number'
-          label='Feelings'
+          label='Feelings?'
           value={feelingsInput}
           onChange={event => setFeelingsInput(event.target.value)}
           variant='standard'

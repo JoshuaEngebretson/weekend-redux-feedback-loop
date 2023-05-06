@@ -2,6 +2,7 @@ import Swal from "sweetalert2";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom/";
 import { useState } from "react";
+import { TextField } from "@mui/material";
 
 function UnderstandPage() {
 
@@ -30,12 +31,34 @@ function UnderstandPage() {
     }
   }
 
-  const required = () => {
+  const requiredUnderstandingInput = () => {
     if (requiredInput) {
-      return 'required'
+      // return 'required'
+      return (
+        <TextField
+          type='number'
+          label='Understanding?'
+          error
+          value={understandingInput}
+          onChange={event => setUnderstandingInput(event.target.value)}
+          variant='standard'
+          helperText='Scale of 1-5 (Required)'
+          sx = {{width: 225, left:120, mt:-1}}
+        />
+      )
     }
     else {
-      return 'bottom-border'
+      return (
+        <TextField
+          type='number'
+          label='Understanding?'
+          value={understandingInput}
+          onChange={event => setUnderstandingInput(event.target.value)}
+          variant='standard'
+          helperText='Scale of 1-5'
+          sx = {{width: 225, left:120, mt:-1}}
+        />
+      )
     }
   }
 
@@ -43,14 +66,7 @@ function UnderstandPage() {
   return (
     <>
       <h1>How well are you understanding the content?</h1>
-      <p>On a scale from 1-5</p>
-      <input 
-        className={required()}
-        type='number'
-        placeholder='Required'
-        value={understandingInput}
-        onChange={event => setUnderstandingInput(event.target.value)}
-      />
+      {requiredUnderstandingInput()}
       <button className='next-btn' onClick={checkRequiredSendToSupport}>Next</button>
     </>
   )

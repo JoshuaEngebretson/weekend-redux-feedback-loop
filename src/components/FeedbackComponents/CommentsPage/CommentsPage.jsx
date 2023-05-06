@@ -10,7 +10,8 @@ function CommentsPage() {
   const dispatch = useDispatch();
   const [feedbackComments, setFeedbackComments] = useState('')
 
-  const dispatchSendToReview = () =>{
+  const dispatchSendToReview = (event) =>{
+    event.preventDefault();
     dispatch({
       type: 'SET_FEEDBACK_COMMENTS',
       payload: feedbackComments
@@ -21,19 +22,24 @@ function CommentsPage() {
   return (
     <>
       <h1>Any comments you want to leave?</h1>
-      <div className="above-input">
-      </div>
-      <TextField
-        label='Enter Comments Here'
-        helperText='(Optional)'
-        value={feedbackComments}
-        onChange={event => setFeedbackComments(event.target.value)}
-        variant='standard'
-        sx = {{width: 225, left:120, mt:-1}}
-        multiline
-        maxRows={Infinity}
-      />
-        <button className='next-btn' onClick={dispatchSendToReview}>Next</button>
+      <form>
+        <TextField
+          label='Enter Comments Here'
+          helperText='(Optional)'
+          value={feedbackComments}
+          onChange={event => setFeedbackComments(event.target.value)}
+          variant='standard'
+          sx = {{width: 225, left:120, mt:-1}}
+          multiline
+          maxRows={Infinity}
+        />
+        <button
+          className='next-btn'
+          onClick={dispatchSendToReview}
+        >
+          Next
+        </button>
+      </form>
     </>
   )
 }

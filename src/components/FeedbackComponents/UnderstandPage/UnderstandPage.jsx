@@ -11,13 +11,14 @@ function UnderstandPage() {
   const [understandingInput, setUnderstandingInput] = useState('');
   const [requiredInput, setRequiredInput] = useState(false);
 
-  const checkRequiredSendToSupport = () => {
+  const checkRequiredSendToSupport = (event) => {
+    event.preventDefault();
     if (understandingInput !== '' && understandingInput >= 1 && understandingInput <= 5) {
       dispatch({
         type: 'SET_UNDERSTANDING_RATING',
         payload: understandingInput
       })
-      history.push('/support')
+      history.push('/support');
       setRequiredInput(false);
     }
     else {
@@ -33,7 +34,9 @@ function UnderstandPage() {
 
   const requiredUnderstandingInput = () => {
     if (requiredInput) {
-      // return 'required'
+      // Adjust styling to show bottom border
+      //  change label to show as red
+      //  Add (Required) to the subtext below the input
       return (
         <TextField
           type='number'
@@ -48,6 +51,7 @@ function UnderstandPage() {
       )
     }
     else {
+      // Style as normal, blue bottom border when selected
       return (
         <TextField
           type='number'
@@ -66,8 +70,15 @@ function UnderstandPage() {
   return (
     <>
       <h1>How well are you understanding the content?</h1>
-      {requiredUnderstandingInput()}
-      <button className='next-btn' onClick={checkRequiredSendToSupport}>Next</button>
+      <form>
+        {requiredUnderstandingInput()}
+        <button
+          className='next-btn'
+          onClick={checkRequiredSendToSupport}
+        >
+          Next
+        </button>
+      </form>
     </>
   )
 }

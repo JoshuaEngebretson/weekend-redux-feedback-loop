@@ -11,13 +11,14 @@ function SupportPage() {
   const [supportedInput, setSupportedInput] = useState('');
     const [requiredInput, setRequiredInput] = useState(false);
 
-  const checkRequiredSendToComments = () => {
+  const checkRequiredSendToComments = (event) => {
+    event.preventDefault();
     if (supportedInput !== '' && supportedInput >= 1 && supportedInput <= 5) {
       dispatch({
         type: 'SET_SUPPORTED_RATING',
         payload: supportedInput
       })
-      history.push('/comments')
+      history.push('/comments');
       setRequiredInput(false);
     }
     else {
@@ -33,7 +34,9 @@ function SupportPage() {
 
   const requiredSupportInput = () => {
     if (requiredInput) {
-      // return 'required'
+      // Adjust styling to show bottom border
+      //  change label to show as red
+      //  Add (Required) to the subtext below the input
       return (
         <TextField
           type='number'
@@ -48,6 +51,7 @@ function SupportPage() {
       )
     }
     else {
+      // Style as normal, blue bottom border when selected
       return (
         <TextField
           type='number'
@@ -66,8 +70,15 @@ function SupportPage() {
   return (
     <>
       <h1>How well are you being supported?</h1>
-      {requiredSupportInput()}
-      <button className='next-btn' onClick={checkRequiredSendToComments}>Next</button>
+      <form>
+        {requiredSupportInput()}
+        <button
+          className='next-btn'
+          onClick={checkRequiredSendToComments}
+        >
+          Next
+        </button>
+      </form>
     </>
   )
 }

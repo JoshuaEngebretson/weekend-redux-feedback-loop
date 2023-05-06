@@ -11,13 +11,14 @@ function FeelPage() {
   const [feelingsInput, setFeelingsInput] = useState('');
   const [requiredInput, setRequiredInput] = useState(false);
 
-  const checkRequiredSendToUnderstand = () => {
+  const checkRequiredSendToUnderstand = (event) => {
+    event.preventDefault();
     if (feelingsInput !== '' && feelingsInput >= 1 && feelingsInput <= 5) {
       dispatch({
         type: 'SET_FEELINGS_RATING',
         payload: feelingsInput
       })
-      history.push('/understanding')
+      history.push('/understanding');
       setRequiredInput(false);
     }
     else {
@@ -33,7 +34,9 @@ function FeelPage() {
 
   const requiredFeelingsInput = () => {
     if (requiredInput) {
-      // return 'required'
+      // Adjust styling to show bottom border
+      //  change label to show as red
+      //  Add (Required) to the subtext below the input
       return (
         <TextField
           type='number'
@@ -48,6 +51,7 @@ function FeelPage() {
       )
     }
     else {
+      // Style as normal, blue bottom border when selected
       return (
         <TextField
           type='number'
@@ -66,8 +70,15 @@ function FeelPage() {
   return (
     <>
       <h1>How are you feeling today?</h1>
-      {requiredFeelingsInput()}
-      <button className='next-btn' onClick={checkRequiredSendToUnderstand}>Next</button>
+      <form>
+        {requiredFeelingsInput()}
+        <button 
+          className='next-btn' 
+          onClick={checkRequiredSendToUnderstand}
+        >
+          Next
+        </button>
+      </form>
     </>
   )
 }

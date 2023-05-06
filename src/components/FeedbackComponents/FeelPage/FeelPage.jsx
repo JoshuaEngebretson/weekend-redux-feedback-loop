@@ -31,31 +31,34 @@ function FeelPage() {
     }
   }
 
-  const required = () => {
+  const requiredFeelingsInput = () => {
     if (requiredInput) {
       // return 'required'
       return (
         <TextField
+          type='number'
           label='Feelings'
           error
           value={feelingsInput}
           onChange={event => setFeelingsInput(event.target.value)}
           variant='standard'
-          helperText='Required Number 1-5'
+          helperText='Scale of 1-5 (Required)'
+          sx = {{width: 225, left:120, mt:-1}}
         />
       )
     }
     else {
       return (
         <TextField
+          type='number'
           label='Feelings'
           value={feelingsInput}
           onChange={event => setFeelingsInput(event.target.value)}
           variant='standard'
-          helperText='Number 1-5'
+          helperText='Scale of 1-5'
+          sx = {{width: 225, left:120, mt:-1}}
         />
       )
-      // return 'bottom-border'
     }
   }
 
@@ -63,8 +66,7 @@ function FeelPage() {
   return (
     <>
       <h1>How are you feeling today?</h1>
-      <p>On a scale from 1-5</p>
-      {required()}
+      {requiredFeelingsInput()}
       <button className='next-btn' onClick={checkRequiredSendToUnderstand}>Next</button>
     </>
   )

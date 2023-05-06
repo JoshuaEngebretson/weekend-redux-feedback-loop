@@ -24,62 +24,14 @@ h4 {
 
 .next-btn {
   margin-left: 20%;
-  padding: 6px 15px 6px 15px;
-}
-
-.required {
-  border: 0;
-  border-bottom: 1px solid #f9002ed2;
-  outline: none;
-  width: 13%; 
-  margin-left: 13%;
-  padding: 10px;
+  padding: 7px 20px 7px 20px;
   font-size: larger;
+  border-radius: 20%;
+  border: none;
+  background-color: rgb(216,216,216);
+}
+.next-btn:hover {
+  background-color: #033076;
+  color: rgb(239, 239, 239);
 }
 
-.required::placeholder {
-  color: #f9002ed2;
-}
-
-.bottom-border {
-  border: 0;
-  border-bottom: 1px solid #000;
-  outline: none;
-  width: 13%; 
-  margin-left: 13%;
-  padding: 10px;
-  font-size: larger;
-}
-
-textarea {
-  border: 0;
-  border-bottom: 1px solid #000;
-  outline: none;
-  font-size: larger;
-  resize: none;
-}
-
-.textarea {
-  padding: 5px;
-  display:inline-block;
-  max-width: 30%;
-  min-width: 30%;
-  outline: none;
-  overflow: hidden;
-  resize: horizontal;
-  /* min-height: 60px; */
-  line-height: 20px;
-  border-bottom: 1px solid #000;
-  font-size: larger;
-}
-
-.textarea[contenteditable]:empty::before {
-  content: attr(placeholder);
-  color: gray;
-  pointer-events: none;
-}
-
-/* .textarea[contenteditable]:empty:not:focus:before {
-  content: "";
-  color: gray;
-} */

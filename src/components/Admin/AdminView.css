@@ -1,0 +1,31 @@
+table {
+  width: 70%;
+  text-align: left;
+  margin: auto;
+}
+table, th, td {
+  border: 1px solid rgb(0, 23, 174);
+  border-collapse: collapse;
+  height: 2.15em;
+}
+th, td {
+  padding: .5em;
+  min-width: 3.5em;
+}
+thead {
+  background: #f7f7f7;
+  color: #001c8e;
+}
+tbody tr:nth-child(odd){
+  background: #FCFCFC;
+}
+tbody tr:nth-child(even){
+  background: #DCDCDC;
+}
+
+.delete-btn {
+  outline:auto;
+}
+.delete-btn:active {
+  background-color: black;
+}

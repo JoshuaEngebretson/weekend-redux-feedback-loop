@@ -1,9 +1,6 @@
 import React from 'react';
-import axios from 'axios';
 import './App.css';
-import { useDispatch } from 'react-redux';
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
-import { useEffect } from 'react';
 
 // Import Components
 import CommentsPage from '../FeedbackComponents/CommentsPage/CommentsPage';
@@ -17,28 +14,6 @@ import AdminView from '../Admin/AdminView';
 
 
 function App() {
-
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    getFeedback();
-  }, []);
-
-  const getFeedback = () => {
-    axios({
-      type: 'GET',
-      url: '/feedback'
-    }).then ((response) => {
-      const feedbackResultsArray = response.data;
-      dispatch({
-        type: 'SET_FEEDBACK_RESULTS',
-        payload: feedbackResultsArray
-      })
-    }).catch((err) => {
-      console.log('Error:', err);
-    })
-  }
-
 
   return (
     <div className='App'>
@@ -69,7 +44,7 @@ function App() {
           <SubmissionSuccessPage />
         </Route>
         <Route exact path='/admin'>
-          <AdminView getFeedback={getFeedback}/>
+          <AdminView />
         </Route>
       </Router>
     </div>

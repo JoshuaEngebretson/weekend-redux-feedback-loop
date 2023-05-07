@@ -3,7 +3,13 @@ const router = express.Router();
 const pool = require('../modules/pool')
 
 router.get('/', (req, res) => {
-    pool.query('SELECT * from "feedback";')
+
+    const sqlText =`
+        SELECT * from "feedback"
+            ORDER BY date DESC, id DESC;
+    `;
+    
+    pool.query(sqlText)
     .then((dbRes) => {
         res.send(dbRes.rows);
     })
@@ -16,14 +22,14 @@ router.get('/', (req, res) => {
 router.post('/', (req, res) => {
     const feedback = req.body;
 
-    sqlText = `
+    const sqlText = `
         INSERT INTO feedback
         ("feeling", "understanding", "support", "comments")
         VALUES
         ($1, $2, $3, $4);
     `;
 
-    sqlValues = [
+    const sqlValues = [
         feedback.feeling,
         feedback.understanding,
         feedback.support,

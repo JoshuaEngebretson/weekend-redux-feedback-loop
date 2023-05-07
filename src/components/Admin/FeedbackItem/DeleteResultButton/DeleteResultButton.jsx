@@ -2,7 +2,8 @@ import Swal from "sweetalert2";
 import axios from "axios";
 import DeleteSweepIcon from '@mui/icons-material/DeleteSweep';
 
-function DeleteResult({item, resultSwalFooter}){
+function DeleteResultButton({item, resultSwalFooter, getFeedback}){
+  
   const deleteRow = () => {
     // Pop up alert to confirm if the user wants to delete the result
     Swal.fire({
@@ -57,12 +58,14 @@ function DeleteResult({item, resultSwalFooter}){
   }
 
   return (
-    <button 
-        className='delete-btn'
-        onClick={deleteRow}>
-      <DeleteSweepIcon />
-    </button>
+    <td>
+      <button 
+          className='delete-btn'
+          onClick={deleteRow}>
+        <DeleteSweepIcon />
+      </button>
+    </td>
   )
 }
 
-export default DeleteResult;
+export default DeleteResultButton;

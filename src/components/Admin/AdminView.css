@@ -32,8 +32,8 @@ tbody tr:nth-child(even){
 }
 
 tbody tr:nth-child(odd).flagged{
-  background: #f48a8a;
+  background: #fd7d7d;
 }
 tbody tr:nth-child(even).flagged{
-  background: #b85c5c;
+  background: #d36868;
 }

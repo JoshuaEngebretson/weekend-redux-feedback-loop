@@ -2,7 +2,11 @@ const express = require('express');
 const router = express.Router();
 const pool = require('../modules/pool')
 
+// GET Route
 router.get('/', (req, res) => {
+    // Get everything from database
+    // sorted by most recent date followed by
+    // highest id (most recent)
     const sqlText =`
         SELECT * from "feedback"
             ORDER BY date DESC, id DESC;
@@ -15,8 +19,9 @@ router.get('/', (req, res) => {
     .catch((dbErr) => {
         poolError(res, 'GET /feedback', dbErr)
     });
-})
+}) // End GET Route
 
+// POST Route
 router.post('/', (req, res) => {
     const feedback = req.body;
 
@@ -42,7 +47,7 @@ router.post('/', (req, res) => {
         .catch((dbErr) => {
             poolError(res, 'POST /feedback', dbErr)
         })
-})
+}) // End POST Route
 
 // DELETE Route
 router.delete('/:id', (req, res) => {
@@ -56,7 +61,7 @@ router.delete('/:id', (req, res) => {
 
     pool.query(sqlText, [id])
         .then((dbRes) => {
-            // On successful creation within the database,
+            // On successful deletion within the database,
             //   send "Okay status"
             res.sendStatus(200)
         })
@@ -64,6 +69,41 @@ router.delete('/:id', (req, res) => {
             poolError(res, 'DELETE /feedback/:id', dbErr)
         })
 }) // End DELETE Route
+
+// PUT Route to add flag
+router.put('/flag/:id', (req, res) => {
+    const id = req.params.id;
+
+    let sqlText;
+
+    if (req.body.addFlag) {
+        sqlText = `
+            UPDATE feedback
+                SET flagged = true
+                WHERE id=$1;
+        `;
+    }
+    else if (req.body.removeFlag) {
+        sqlText = `
+            Update feedback
+                Set flagged = false
+                WHERE id=$1
+        `;
+    }
+
+    pool.query (sqlText, [id])
+        .then((dbRes) => {
+            // On successful update within the database,
+            //   send "Okay status"
+            res.sendStatus(200)
+        })
+        .catch((dbErr) => {
+            poolError(res, 'PUT /feedback/flag/:id', dbErr)
+        })
+}) //End PUT Route to add/rmove flag
+
+// PUT Route to remove flag
+router.put
 
 const poolError = (res, routeTypeAndRoute, err) => {
     // On Error, log the error

@@ -23,9 +23,17 @@ tbody tr:nth-child(even){
   background: #DCDCDC;
 }
 
-.delete-btn {
+.delete-btn, .flag-btn {
   outline:auto;
 }
 .delete-btn:active {
   background-color: black;
+  color: white;
+}
+
+tbody tr:nth-child(odd).flagged{
+  background: #f48a8a;
+}
+tbody tr:nth-child(even).flagged{
+  background: #b85c5c;
 }

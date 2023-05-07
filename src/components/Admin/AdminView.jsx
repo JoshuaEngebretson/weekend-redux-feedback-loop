@@ -40,6 +40,7 @@ function AdminView() {
             <th>Support</th>
             <th>Comments</th>
             <th>Delete</th>
+            <th>Toggle Flag</th>
           </tr>
         </thead>
         <tbody>

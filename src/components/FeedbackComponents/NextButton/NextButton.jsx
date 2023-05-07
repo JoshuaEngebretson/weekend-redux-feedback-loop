@@ -9,7 +9,7 @@ function NextButton({feedbackInput, setRequiredInput, nextDestination, type}) {
 
   const checkRequiredSendToNextPage = (event) => {
     event.preventDefault();
-    if (feedbackInput !== '' && feedbackInput >= 1 && feedbackInput <= 5) {
+    if (feedbackInput >= 1 && feedbackInput <= 5) {
       dispatch({
         type: type,
         payload: feedbackInput

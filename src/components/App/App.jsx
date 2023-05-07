@@ -11,6 +11,7 @@ import FeelPage from '../FeedbackComponents/FeelPage/FeelPage';
 import SupportPage from '../FeedbackComponents/SupportPage/SupportPage';
 import UnderstandPage from '../FeedbackComponents/UnderstandPage/UnderstandPage';
 import ReviewFeedbackPage from '../FeedbackComponents/ReviewFeedbackPage/ReviewFeedbackPage';
+import EditFeedbackPage from '../FeedbackComponents/EditFeedbackPage/EditFeedbackPage';
 import SubmissionSuccessPage from '../FeedbackComponents/SubmissionSuccessPage/SubmissionSuccessPage';
 import AdminView from '../Admin/AdminView';
 
@@ -59,9 +60,10 @@ function App() {
           <CommentsPage />
         </Route>
         <Route exact path='/review/feedback'>
-          <ReviewFeedbackPage
-            getFeedback={getFeedback}
-          />
+          <ReviewFeedbackPage />
+        </Route>
+        <Route exact path='/edit/feedback'>
+          <EditFeedbackPage />
         </Route>
         <Route exact path='/success'>
           <SubmissionSuccessPage />

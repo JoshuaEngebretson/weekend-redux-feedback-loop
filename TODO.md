@@ -44,15 +44,17 @@
   - [X] in form of TextField
   - [ ] buttons?
   - [ ] NavBar?
-  - [ ] Icons?
+  - [X] Icons?
   - [ ] snackbar? Not sure what this is
   - [ ] cards?
 
 - [ ] Admin Section
   - located at '/admin'
-  - [ ] displays all the existing feedback (pulled from the database)
+  - [X] displays all the existing feedback (pulled from the database)
     - Ordered by most recent at top
-  - [ ] allow admin to delete feedback from the database
+  - [X] allow admin to delete feedback from the database
     - prompt for confirmation before deletion
+  - [X] Add ability to flag existing feedback entry for further review
+    - change color if flagged a red color
 
 - [ ] Deploy to Heroku

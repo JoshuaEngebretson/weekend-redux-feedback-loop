@@ -36,6 +36,7 @@ Created a multi-page feedback form. This would allow a given individual or busin
 
 -----
 ## Usage
+### Student Usage:
 Once the page is open, you should be greeted with the first question "How are you feeling today?"
 
 1. To proceed to the next page, you need to enter a number between 1 and 5 within the input field
@@ -70,6 +71,19 @@ Once the page is open, you should be greeted with the first question "How are yo
 6. On a successful submission you are brought to a thank you page, with the option of clicking on a new button to `Leave New Feedback`
     - If you choose to click on this button, you would repeat steps 1-4.
     - Otherwise your have now completed the feedback process.
+
+### Admin Usage
+To view the Admin page go to [localhost:3000/#/admin](http://localhost:3000/#/admin)
+1. Here the Admin for the page can view all the feedback results that have previously been entered.
+    - They are sorted with the most recent feedback at the top.
+
+2. The Admin can delete a row of feedback by clicking on the trash can image.
+    - The Admin will be prompted to confirm they want to delete this result.
+    - Upon confirmation that result will be permanently removed from the database
+
+3. The Admin can also toggle the flagged status a row of feedback for further review by clicking on the flag icon.
+    - This will either set the flagged status to true within the database for this result or set it to false if it was already flagged.
+    - When a result is flagged, its row will turn a red hue.
 
 -----
 ## Built With

@@ -2,7 +2,7 @@ import './AdminView.css'
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import axios from 'axios';
-import Result from './Result/Result';
+import FeedbackItem from './FeedbackItem/FeedbackItem.jsx'
 
 function AdminView() {
 
@@ -46,11 +46,12 @@ function AdminView() {
           {
             // Loop through the feedbackResults Array
             //  For each result, render a new row to the table
-            feedbackResultsArray.map((result) => {
+            feedbackResultsArray.map((item) => {
               return (
-                <Result 
-                  key={result.id}
-                  result={result}
+                <FeedbackItem 
+                  key={item.id}
+                  item={item}
+                  getFeedback={getFeedback}
                 />
               )
             })

@@ -38,19 +38,36 @@ Created a multi-page feedback form. This would allow a given individual or busin
 ## Usage
 Once the page is open, you should be greeted with the first question "How are you feeling today?"
 
-1. To proceed to the next page, you need to enter a number between 1 and 5 within the input field 
+1. To proceed to the next page, you need to enter a number between 1 and 5 within the input field
+    - Proceed to step 2
 
 2. You can then either click on the `Next` button OR hit enter on your keyboard to proceed to the next page.
+    - Proceed to step 3
 
 3. Repeats steps 1 and 2 until you reach the Comments page.
     - The input field on this page is optional.
         - There is no minimum or maximum length to your comment should you choose to leave one.
     - You can click on the `Next` button on this page without entering any information into the input field.
+        - Proceed to step 4
 
 4. The next page is your chance to review your Feedback before submitting.
+    - Here you can either `Submit` your answers or `Edit Responses`
+    - To Edit your answers, click on the `Edit Responses` button
+        - This will redirect you to a new page to edit all of your responses.
+        - If you click this, proceed to step 5
     - Once you are satisfied with your answers, you would click on the `Submit` button to proceed.
+        - Proceed to step 6.
 
-5. On a successful submission you are brought to a thank you page, with the option of clicking on a new button to `Leave New Feedback`
+5. If you clicked on the 'Edit Responses' button within the Review step;
+    -  Just like the pages before:
+        - The "Feelings?", "Understanding?", and "Support?" Fields all need to have a number between 1-5 entered into them.
+        - The "Enter Comments Here" field can either be completed, or left empty.
+    - If you want to save your edited responses click `Save Edit`
+        - Go back to step 4
+    - If you want to cancel your edit, click `Cancel Edit`
+        - Go back to step 4
+
+6. On a successful submission you are brought to a thank you page, with the option of clicking on a new button to `Leave New Feedback`
     - If you choose to click on this button, you would repeat steps 1-4.
     - Otherwise your have now completed the feedback process.
 

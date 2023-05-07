@@ -31,42 +31,32 @@ function EditFeedbackPage() {
     if (feelingsInput >= 1 && feelingsInput <= 5
         && understandingInput >= 1 && understandingInput <= 5
         && supportedInput >= 1 && supportedInput <= 5) {
-      sendUpdatedFeedbackToRedux();
+      sendUpdatedFeedbackToRedux('SET_FEELINGS_RATING', feelingsInput);
+      sendUpdatedFeedbackToRedux('SET_UNDERSTANDING_RATING', understandingInput);
+      sendUpdatedFeedbackToRedux('SET_SUPPORTED_RATING', supportedInput);
+      sendUpdatedFeedbackToRedux('SET_FEEDBACK_COMMENTS', commentsInput);
       goToReviewPage();
     }
     else {
+      // Alert user why unable to save their edits
       Swal.fire({
         icon: 'warning',
         html: `
           <p>Complete the required fields</p>
           <p>with a number from 1 - 5.</p>`
       })
+      // If any of the required inputs are not filled in correctly
+      //  outline the textField in red and add (Required) to the helperText
       setRequiredTrue(feelingsInput, setRequiredFeelings);
       setRequiredTrue(understandingInput, setRequiredUnderstanding);
       setRequiredTrue(supportedInput, setRequiredSupported);
     }
   }
 
-  const sendUpdatedFeedbackToRedux = () => {
-    // Update currentFeedback.feelings
+  const sendUpdatedFeedbackToRedux = (type, payload) => {
     dispatch({
-      type: 'SET_FEELINGS_RATING',
-      payload: feelingsInput
-    })
-    // Update currentFeedback.understanding
-    dispatch({
-      type: 'SET_UNDERSTANDING_RATING',
-      payload: understandingInput
-    })
-    // Update currentFeedback.supported
-    dispatch({
-      type: 'SET_SUPPORTED_RATING',
-      payload: supportedInput
-    })
-    // Update currentFeedback.comments
-    dispatch({
-      type: 'SET_FEEDBACK_COMMENTS',
-      payload: commentsInput
+      type: type,
+      payload: payload
     })
   }
 

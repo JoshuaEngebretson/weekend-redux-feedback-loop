@@ -32,11 +32,11 @@
 
 # Stretch Goals
 
-- [ ] Refactor Redux out of Index.js
-  - [ ] Refactor Reducers out of Index.js
-  - [ ] Refactor Store out of Index.js
+- [X] Refactor Redux out of Index.js
+  - [X] Refactor Reducers out of Index.js
+  - [X] Refactor Store out of Index.js
 
-- [ ] Allow userts to Update scores
+- [ ] Allow users to Update scores
   - Edit on review screen (AND / OR back button)
   - still need input validation (no empty input)
 

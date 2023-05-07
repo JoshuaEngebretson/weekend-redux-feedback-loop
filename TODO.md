@@ -36,8 +36,8 @@
   - [X] Refactor Reducers out of Index.js
   - [X] Refactor Store out of Index.js
 
-- [ ] Allow users to Update scores
-  - Edit on review screen (AND / OR back button)
+- [X] Allow users to Update scores
+  - Edit on review screen (now sends to an additional edit page)
   - still need input validation (no empty input)
 
 - [X] Material-Ui

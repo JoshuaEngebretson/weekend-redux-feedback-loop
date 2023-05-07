@@ -10,6 +10,7 @@ function FeelPage() {
   const label = 'Feelings?'
   const type = 'SET_FEELINGS_RATING'
   const nextDestination = '/understanding'
+  const style = {width: 225, left:120, mt:-1}
 
   return (
     <>
@@ -20,6 +21,7 @@ function FeelPage() {
           setFeedbackInput={setFeelingsInput}
           label={label}
           requiredInput={requiredInput}
+          style={style}
         />
         <NextButton
           feedbackInput={feelingsInput}

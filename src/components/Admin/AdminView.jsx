@@ -1,8 +1,8 @@
 import './AdminView.css'
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import DeleteSweepIcon from '@mui/icons-material/DeleteSweep';
 import axios from 'axios';
+import Result from './Result/Result';
 
 function AdminView() {
 
@@ -48,17 +48,10 @@ function AdminView() {
             //  For each result, render a new row to the table
             feedbackResultsArray.map((result) => {
               return (
-                <tr key={result.id}>
-                  <td>{result.feeling}</td>
-                  <td>{result.understanding}</td>
-                  <td>{result.support}</td>
-                  <td>{result.comments}</td>
-                  <td>
-                    <button className='delete-btn'>
-                      <DeleteSweepIcon />
-                    </button>
-                  </td>
-                </tr>
+                <Result 
+                  key={result.id}
+                  result={result}
+                />
               )
             })
           }

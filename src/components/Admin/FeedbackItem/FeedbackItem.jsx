@@ -12,6 +12,7 @@ function Result ({item, getFeedback}) {
     Comments: ${item.comments}<br>
   `;
 
+  // Adjust css based on if the result is flagged or not
   const flagged = () => {
     if (item.flagged) {
       return 'flagged'

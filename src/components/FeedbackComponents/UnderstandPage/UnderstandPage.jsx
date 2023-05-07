@@ -7,9 +7,10 @@ function UnderstandPage() {
   const [understandingInput, setUnderstandingInput] = useState('');
   const [requiredInput, setRequiredInput] = useState(false);
 
-  const label = "Understanding?"
+  const label = 'Understanding?'
   const type ='SET_UNDERSTANDING_RATING'
   const nextDestination = '/support'
+  const style = {width: 225, left:120, mt:-1}
 
   return (
     <>
@@ -20,6 +21,7 @@ function UnderstandPage() {
           setFeedbackInput={setUnderstandingInput}
           label={label}
           requiredInput={requiredInput}
+          style={style}
         />
         <NextButton
           feedbackInput={understandingInput}

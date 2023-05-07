@@ -1,4 +1,11 @@
-const currentFeedback = (state = {}, action) => {
+const emptyFeedback = {
+    feelings: '',
+    understanding: '',
+    supported: '',
+    comments: '',
+};
+
+const currentFeedback = (state = emptyFeedback, action) => {
     switch (action.type) {
         case 'SET_FEELINGS_RATING':
             const feelingsInput = action.payload;
@@ -17,12 +24,6 @@ const currentFeedback = (state = {}, action) => {
             return {...state, comments: feedbackComments};
 
         case 'RESET_CURRENT_FEEDBACK':
-            const emptyFeedback = {
-                feelings: '',
-                understanding: '',
-                supported: '',
-                comments: '',
-            };
             return emptyFeedback;
 
     default: return state;

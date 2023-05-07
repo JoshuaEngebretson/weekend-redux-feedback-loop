@@ -31,7 +31,7 @@ function CommentsPage() {
           variant='standard'
           sx = {{width: 225, left:120, mt:-1}}
           multiline
-          maxRows={Infinity}
+          maxRows={5}
         />
         <button
           className='next-btn'

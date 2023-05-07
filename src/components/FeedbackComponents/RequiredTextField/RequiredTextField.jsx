@@ -1,6 +1,6 @@
 import { TextField } from "@mui/material";
 
-function RequiredTextField({label, feedbackInput, setFeedbackInput, requiredInput}) {
+function RequiredTextField({label, feedbackInput, setFeedbackInput, requiredInput, style}) {
 
   if (requiredInput) {
     // Adjust styling to show bottom border
@@ -15,7 +15,7 @@ function RequiredTextField({label, feedbackInput, setFeedbackInput, requiredInpu
         onChange={event => setFeedbackInput(event.target.value)}
         variant='standard'
         helperText='Scale of 1-5 (Required)'
-        sx = {{width: 225, left:120, mt:-1}}
+        sx = {style}
       />
     )
   }
@@ -29,7 +29,7 @@ function RequiredTextField({label, feedbackInput, setFeedbackInput, requiredInpu
         onChange={event => setFeedbackInput(event.target.value)}
         variant='standard'
         helperText='Scale of 1-5'
-        sx = {{width: 225, left:120, mt:-1}}
+        sx = {style}
       />
     )
   }

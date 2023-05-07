@@ -10,6 +10,7 @@ function SupportPage() {
   const label = 'Support?'
   const type = 'SET_SUPPORTED_RATING'
   const nextDestination = '/comments'
+  const style = {width: 225, left:120, mt:-1}
 
   return (
     <>
@@ -20,6 +21,7 @@ function SupportPage() {
           setFeedbackInput={setSupportedInput}
           label={label}
           requiredInput={requiredInput}
+          style={style}
         />
         <NextButton
           feedbackInput={supportedInput}

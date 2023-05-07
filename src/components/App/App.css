@@ -3,7 +3,7 @@
 }
 
 .App-header {
-  background-color: #033076;
+  background-color: #375e8f;
   min-height: 70px;
   padding: 20px;
   color: white;
@@ -35,7 +35,7 @@ button {
   background-color: rgb(216,216,216);
 }
 button:hover {
-  background-color: #033076;
-  color: rgb(239, 239, 239);
+  background-color: #375e8f;
+  color: white;
 }
 

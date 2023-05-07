@@ -21,8 +21,8 @@ function NextButton({feedbackInput, setRequiredInput, nextDestination, type}) {
       Swal.fire({
         icon: 'warning',
         html: `
-          <p>Please complete the required field.</p>
-          <p>With a number between 1 and 5</p>`
+          <p>Complete the required field</p>
+          <p>with a number from 1 - 5.</p>`
       })
       setRequiredInput(true);
     }

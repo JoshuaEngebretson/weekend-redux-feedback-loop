@@ -1,4 +1,4 @@
--- Database should be prime_feedback
+-- Database should be titled prime_feedback
 
 -- Switch to "prime_feedback" before making:
 -- Table to store the feedback

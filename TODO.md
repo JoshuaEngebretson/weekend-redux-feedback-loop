@@ -28,9 +28,13 @@
   - path to / (feeling page)
     - resets redux currentFeedback
 
-- [ ] Write README.md
+- [X] Write README.md
 
 # Stretch Goals
+
+- [ ] Refactor Redux out of Index.js
+  - [ ] Refactor Reducers out of Index.js
+  - [ ] Refactor Store out of Index.js
 
 - [ ] Allow userts to Update scores
   - Edit on review screen (AND / OR back button)

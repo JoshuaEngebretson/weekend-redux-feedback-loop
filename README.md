@@ -4,7 +4,7 @@ Duration 05/04/23-05/07/23 weekend project.
 
 Created a multi-page feedback form. This would allow a given individual or business to check in with their students on content that they are learning.
 
------
+
 <!-- ## Screen Shot
 
 ----- -->
@@ -17,7 +17,7 @@ Created a multi-page feedback form. This would allow a given individual or busin
 - [Postico](https://eggerapps.at/postico/v1.php)
     - This is used to set up your initial test database.
 
------
+
 ## Installation
 
 1. Node Module
@@ -34,7 +34,7 @@ Created a multi-page feedback form. This would allow a given individual or busin
     2. The second you will run the command `npm run client`
         - This should open up your browser on [localhost:3000](http://localhost:3000/)
 
------
+
 ## Usage
 ### Student Usage:
 Once the page is open, you should be greeted with the first question "How are you feeling today?"
@@ -85,7 +85,7 @@ To view the Admin page go to [localhost:3000/#/admin](http://localhost:3000/#/ad
     - This will either set the flagged status to true within the database for this result or set it to false if it was already flagged.
     - When a result is flagged, its row will turn a red hue.
 
------
+
 ## Built With
 
 - Node.js
@@ -94,13 +94,12 @@ To view the Admin page go to [localhost:3000/#/admin](http://localhost:3000/#/ad
 - PostgreSQL
 - Postico
 
------
+
 ## Acknowledgement
 
   - Thanks to [Prime Digital Academy](www.primeacademy.io) who equipped and helped me to make this application a reality.
 
   - Thanks to S2SDC for allowing me the time to program this application while I was also taking part in a tech/dress rehearsal and 2 dance performances.
 
------
 ## Support
 If you have suggestions or issues, please email me [here](mailto:joshua.engebretson@gmail.com).
